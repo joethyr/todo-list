@@ -1,122 +1,121 @@
-body {
-  margin: 0;
-  background-color: #F5EEC2;
+:root {
+  --dark-blue: #0C1821;
+  --dim-blue: #1b2a41;
+  --bluish: #324a5f;
+  --lavender: #CCC9DC;
+}
+
+* {
   font-family: 'Noto Sans', sans-serif;
-  display: grid;
 }
 
-header {
-  background-color: #37395F;
-  color: white;
-  height: 5rem;
+body {
+  background-color: var(--dim-blue)
+
 }
 
-.title {
-  padding: 1rem 2rem;
+/* --- NAVBAR --- */
+
+.navbar {
+  background-color: var(--dark-blue);
 }
 
-h1 {
-  display: inline;
-  margin: 0;
-  padding: 0 2rem;
-  font-size: 2.5rem;
-}
-
-.main-container {
-  display:flex;
-  min-height: calc(100vh - 8rem);
-}
-
-/* ----- Sidebar ----- */
-
-aside {
-  font-size: 1rem;
+.navbar-brand {
+  font-size: 3rem;
   font-weight: bold;
-  color: white;
-  background-color: #406B58;
-  /* height: 84vh; */
-  width: 200px;
-  /* z-index: 1; */
-  /* top: 0; */
-  /* left: 0; */
-  overflow-x: hidden;
-  padding-top: 20px;
-  
 }
-
-aside > * {
+.navbar-items {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
   padding-left: 2rem;
 }
 
-.sidebar-project > h3 {
-  font-size: larger;
-  text-decoration: underline;
-  padding: 0 0 .5rem 0;
-}
-
-.sidebar-link {
-  padding: 1rem 0;
-}
-.sidebar-link > i {
-  padding-right: .5rem;
-}
-
-
-/* ----- Section ----- */
-
-section {
-  color: #406B58;
-  margin: 0 auto;
-  padding: 0 1rem;
-  width: 800px;
-}
-
-section > h2 {
-  font-size: 2rem;
-}
-
-
-/* ----- INBOX PAGE ----- */
-
-.inbox-add-task {
-  font-weight: bold;
-}
-
-.inbox-task {
-  border: 1px #37395F solid;
-  border-radius: 2px;
-  margin: 5px;
-  padding: .5rem;
-  text-decoration: none;
-}
-
-.inbox-task > i {
-  float: right;
-}
-
-.inbox-task:hover {
-  background-color: #dfd8af;
-  cursor:default;
-}
-
-.inbox-task > i:hover {
-  cursor: pointer;
-}
-
-.inbox-add-task:hover > p {
-  background-color: #dfd8af;
-  cursor: pointer;
-}
-
-/* ----- Footer ----- */
-footer {
-  background-color: #72A24E;
-  text-align: center;
+.fa-list-check:before, .fa-tasks:before {
   color: white;
-  font-weight: bold;
-  height: 3rem;
 }
 
-footer > * {
-  padding: .8rem .2rem 0;
+/* --- MAIN CONTENT --- */
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+  gap: 10px;
+}
+
+.project-list, .project-content {
+  background-color: var(--bluish);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.project-list {
+  /* flex: 1; */
+  min-width: 281px;
+  max-width: 441px;
+  min-height: 50vh;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline;
+  color: white;
+}
+
+.list-group {
+  margin-top: 1.2rem;
+}
+
+.new-project-creator {
+margin-top: .5rem;
+}
+ 
+
+.btn-create-project {
+  display: inline;
+}
+
+/* --- PROJECT CONTENT --- */
+.project-content {
+  min-width: 450px;
+flex: 3;
+}
+
+.project-task-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-success,.btn-warning,.btn-danger,.fa-pen-to-square,.fa-trash,.task-date {
+  margin-left: 1.2rem;
+}
+
+.low-priority-task {
+  color: green;
+  font-size: .9rem;
+}
+
+.medium-priority-task {
+color: rgb(207, 136, 2);
+font-size: .9rem;
+}
+
+.high-priority-task {
+  font-weight: bold;
+  color: rgb(207, 0, 0);
+  font-size: .9rem;
+}
+
+.btn-add-task {
+  display: flex;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+/* --- MODAL --- */
+.modal-content {
+  padding: 1rem;
 }
