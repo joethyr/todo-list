@@ -22,22 +22,23 @@
   <div class="container project-container">
     <div class="project-list">
       <h2>Projects</h2>
-      <ul class="list-group">
-        <li class="list-group-item active" aria-current="true">Project Test 01</li>
-        <li class="list-group-item">Another Project</li>
-        <li class="list-group-item">Bigger Project</li>
-        <li class="list-group-item">Normal Project</li>
+      <ul class="list-group project-list-group">
+        <li class="list-group-item project-item active">Project Test 01</li>
+        <li class="list-group-item project-item">Another Project</li>
+        <li class="list-group-item project-item">Bigger Project</li>
+        <li class="list-group-item project-item">Normal Project</li>
       </ul>
 
       <div class="new-project-creator">
-        <form>
+        <form id="project-form">
+          <label for="project-form"></label>
             <input 
               type="text"
               class="new-project"
               placeholder="new project name"
-              aria-label="new project name"
+              aria-label="new project name" required
             />
-            <button type="submit" class=".btn-create-project" aria-label="create new project">+</button>
+            <button type="button" class="btn-create-project" aria-label="create new project">+</button>
           </form>
       </div>
     </div>
@@ -96,7 +97,7 @@
             <form class="row g-3">
               <div class="col-12">
                 <label for="inputTitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="inputTitle">
+                <input type="text" class="form-control" id="inputTitle" required>
               </div>
               <div class="col-md-6">
                 <label for="inputDueDate" class="form-label">Due Date:</label>
