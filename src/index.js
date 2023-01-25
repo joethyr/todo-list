@@ -11,5 +11,6 @@
 // document.body.appendChild(component());
 
 import { eventListeners } from "./dom"
+import { projectList } from "./project"
 
 eventListeners()
