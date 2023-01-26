@@ -1,13 +1,4 @@
-import alertMe from "./alert";
+// import * as project from "./project"
+import * as dom from "./dom"
 
-function component() {
-  const element = document.createElement("div");
-  const btn = document.createElement("button");
-
-  btn.innerHTML = "test module output!";
-  btn.onclick = alertMe;
-  element.appendChild(btn);
-
-  return element;
-}
-document.body.appendChild(component());
+dom.render()
