@@ -86,8 +86,10 @@
           </div>
         </li>
       </ul>
-
-      <button type="button" class="btn btn-primary btn-lg btn-add-task" data-bs-toggle="modal" data-bs-target="#addTask">Add Task</button>
+      <div class="delete-things">
+        <button class="btn btn-primary btn-lg btn-add-task" data-bs-toggle="modal" data-bs-target="#addTask">Add Task</button>
+        <button class="btn btn-danger btn-delete-project" data-delete-project-btn>Delete Project</button>
+      </div>
 
       <!-- Modal -->
       <div class="modal fade" id="addTask" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
