@@ -1,10 +1,10 @@
 /* eslint-disable import/prefer-default-export */
 
-const LOCAL_STORAGE_LIST_KEY = "project.list"
-const list = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
+const LOCAL_STORAGE_LIST_KEY = "task.lists"
+const lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 
-function save() {
-  localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(list))
+function save(objs) {
+  localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(objs))
 }
 
-export { list, save }
+export { lists, save }

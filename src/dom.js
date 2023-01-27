@@ -2,10 +2,10 @@
 import * as project from "./project"
 import * as storage from "./local-storage"
 
-
 const projectContainer = document.querySelector("[data-projects")
 const newProjectForm = document.querySelector("[data-new-project-form]")
 const newProjectInput = document.querySelector("[data-new-project-input]")
+const deleteProjectBtn = document.querySelector("[data-delete-project-btn]")
 let selectedProject
 
 function clearElement(element) {
@@ -17,7 +17,7 @@ function clearElement(element) {
 function render() {
   // <li class="list-group-item">Another Project</li>
   clearElement(projectContainer)
-  project.list.forEach(list => {
+  project.lists.forEach(list => {
     const listElement = document.createElement("li")
     listElement.dataset.listId = list.id
     listElement.classList.add("list-group-item")
@@ -29,23 +29,34 @@ function render() {
   })
 }
 
+function saveAndRender() {
+  storage.save(project.lists)
+  render()
+}
+
 newProjectForm.addEventListener("submit", e => {
   e.preventDefault()
   const projectTitle = newProjectInput.value
   if (projectTitle == null || projectTitle === "") return
   const newProject = project.projectFactory(projectTitle)
   newProjectInput.value = null
-  project.list.push(newProject)
-  console.log(project.list)
-  storage.save()
-  render()
+  project.lists.push(newProject)
+  console.log(project.lists)
+  saveAndRender()
 })
 
 projectContainer.addEventListener("click", e => {
   if (e.target.classList.contains("list-group-item")) {
     selectedProject = e.target.dataset.listId
-    render()
+    saveAndRender()
   }
+})
+
+deleteProjectBtn.addEventListener("click", () => {
+  project.updateList(selectedProject)
+  selectedProject = null
+  console.log(project.lists)
+  saveAndRender()
 })
 
 export { render }

@@ -116,10 +116,11 @@ font-size: .9rem;
   font-size: .9rem;
 }
 
-.btn-add-task {
+.delete-things {
   display: flex;
-  margin: auto;
+  /* margin: auto; */
   margin-top: 2rem;
+  justify-content: center;
 }
 
 /* --- MODAL --- */
