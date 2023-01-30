@@ -77,6 +77,13 @@ h2 {
   margin-top: 1.2rem;
 }
 
+.project-list>.list-group>.list-group-item {
+  cursor: pointer;
+}
+.project-list>.list-group>.list-group-item:hover {
+  background-color: rgb(209, 209, 209);
+}
+
 .new-project-creator {
 margin-top: .5rem;
 }
@@ -89,7 +96,7 @@ margin-top: .5rem;
 /* --- PROJECT TASK CONTENT --- */
 .project-content {
   min-width: 450px;
-flex: 3;
+  flex: 3;
 }
 
 .project-task-list {
@@ -118,11 +125,28 @@ font-size: .9rem;
   font-size: .9rem;
 }
 
-.btn-add-task {
+.delete-things {
   display: flex;
-  margin: auto;
-  margin-top: 2rem;
+  justify-content: end;
+  color: white;
 }
+
+.add-task-btn {
+  display: flex;
+  /* margin: auto; */
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+
+.btn.delete {
+  color: white;
+}
+
+.btn.delete:hover {
+  color: grey;
+}
+
 
 /* --- MODAL --- */
 .modal-content {
