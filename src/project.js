@@ -16,8 +16,4 @@ function updateList(selected) {
 
 }
 
-// function createProject(title) {
-//   return { id: Date.now().toString(), title, tasks: [] }
-// }
-
 export { lists, projectFactory, updateList }
