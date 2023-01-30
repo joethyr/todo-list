@@ -21,14 +21,9 @@
 </nav>
   <div class="container project-container">
     <div class="project-list">
-      <h2>Projects</h2>
+      <h2>projects</h2>
       <ul class="list-group" data-projects>
-        <!-- <li class="list-group-item active" aria-current="true">Project Test 01</li>
-        <li class="list-group-item">Another Project</li>
-        <li class="list-group-item">Bigger Project</li>
-        <li class="list-group-item">Normal Project</li> -->
       </ul>
-
       <div class="new-project-creator">
         <form action="" data-new-project-form>
             <input 
@@ -45,50 +40,16 @@
 
     <!-- PROJECT CONTENT -->
     
-    <div class="project-content">
-      <h2>Project Test 01</h2>
-      <ul class="list-group project-list-group">
-        <li class="list-group-item project-task-list">
-          <div>
-            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-            <label class="form-check-label" for="firstCheckbox">First checkbox</label>
-          </div>
-          <div class="task-icons">
-            <span class="low-priority-task">low</span>
-            <span class="task-date"> Jan. 16th</span>
-            <i class="fa-solid fa-pen-to-square"></i>
-            <i class="fa-solid fa-trash"></i>
-          </div>
-        </li>
-        <li class="list-group-item project-task-list">
-          <div>
-            <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-            <label class="form-check-label" for="secondCheckbox">Second checkbox</label>
-          </div>
-          <div class="task-icons">
-            <span class="medium-priority-task">medium
-            </span>
-            <span class="task-date"> Jan. 16th</span>
-            <i class="fa-solid fa-pen-to-square"></i>
-            <i class="fa-solid fa-trash"></i>
-          </div>
-        </li>
-        <li class="list-group-item project-task-list">
-          <div>
-            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-            <label class="form-check-label" for="thirdCheckbox">Third checkbox</label>
-          </div>
-          <div class="task-icons">
-            <span class="high-priority-task">high</span>
-            <span class="task-date"> Jan. 16th</span>
-            <i class="fa-solid fa-pen-to-square"></i>
-            <i class="fa-solid fa-trash"></i>
-          </div>
-        </li>
+    <div class="project-content" data-project-display-container>
+      <h2 data-project-title></h2>
+      <ul class="list-group project-list-group"data-tasks> 
       </ul>
-      <div class="delete-things">
+      <div class="delete-things"> 
+        <button class="btn delete" data-clear-completed-tasks-btn>Clear completed tasks</button>
+        <button class="btn delete" data-delete-project-btn>Delete list</button>
+      </div>
+      <div class="add-task-btn">
         <button class="btn btn-primary btn-lg btn-add-task" data-bs-toggle="modal" data-bs-target="#addTask">Add Task</button>
-        <button class="btn btn-danger btn-delete-project" data-delete-project-btn>Delete Project</button>
       </div>
 
       <!-- Modal -->
@@ -96,26 +57,26 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <h3>Task</h3>
-            <form class="row g-3">
+            <form class="row g-3" data-new-task-form>
               <div class="col-12">
                 <label for="inputTitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="inputTitle">
+                <input type="text" class="form-control" id="inputTitle" data-new-task-input-title>
               </div>
               <div class="col-md-6">
                 <label for="inputDueDate" class="form-label">Due Date:</label>
-                <input type="date" class="form-control" id="inputDueDate">
+                <input type="date" class="form-control" id="inputDueDate" data-new-task-input-date>
               </div>
               <div class="col-md-6">
                 <label for="inputPriorityLevel" class="form-label">Priority Level</label>
                 <select id="inputPriorityLevel" class="form-select">
-                  <option value="1">Low</option>
-                  <option value="2">Medium</option>
-                  <option value="3">High</option>
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
                 </select>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Create Task</button>
+                <button type="submit" class="btn btn-primary btn-create-task">Create Task</button>
               </div>
               </div>
             </form>
@@ -124,6 +85,20 @@
       </div>
     </div>
   </div>
+
+  <template id="task-template">
+    <li class="list-group-item project-task-list">
+    <div>
+        <input class="form-check-input me-1" type="checkbox" id="">
+        <label class="form-check-label" for=""></label>
+      </div>
+      <div class="task-icons">
+        <span class="priority-task"></span>
+        <span class="task-date"></span>
+      </div>
+    </li>  
+  </template>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script src="./index.bundle.js"></script>
 </body>
